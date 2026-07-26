@@ -4,8 +4,6 @@ import math
 from scipy.special import hermite as herm
 
 
-###################### Solution sheet 1 ######################
-
 def HO_eigenstates_exact(n, x):
     """
     Returns the n-th eigenstate of the quantum harmonic oscillator at position 'x' in numerical units.

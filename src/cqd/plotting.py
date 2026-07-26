@@ -6,8 +6,6 @@ import cqd.hamiltonians as hams
 
 
 
-#################### Exercise sheet 1 #####################
-
 def plot_func(func, k):
     """
     Plots the function 'func' for a given value of 'k'.
