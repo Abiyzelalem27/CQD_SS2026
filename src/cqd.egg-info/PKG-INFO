@@ -21,14 +21,7 @@ The time-independent Schrödinger equation for a quantum particle in a one-dimen
 The main topics include:
 
 * Schrödinger equation
-* Harmonic oscillator
-* Analytical eigenenergies and eigenfunctions
-* Numerical discretization
-* Construction of kinetic and potential-energy matrices
-* Numerical diagonalization using `numpy.linalg.eigh`
-* Comparison of analytical and numerical results
-* Convergence with respect to grid size and grid spacing
-* Double-well potential and quantum tunnelling
+* Harmonic oscillator 
 
 ## Repository Structure
 

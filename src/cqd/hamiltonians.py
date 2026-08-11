@@ -6,7 +6,32 @@ from scipy.special import hermite as herm
 
 def HO_eigenstates_exact(n, x):
     """
-    Returns the n-th eigenstate of the quantum harmonic oscillator at position 'x' in numerical units.
+   Return the normalized n-th eigenstate of the one-dimensional
+    quantum harmonic oscillator at position(s) x.
+
+    The analytical eigenfunction is
+
+        phi_n(x) = N_n * H_n(x) * exp(-x^2 / 2),
+
+    where
+
+        N_n = 1 / sqrt(2^n * n! * sqrt(pi)) 
+        
+    the normalization constant, and H_n(x) is the n-th
+    Hermite polynomial.
+
+    Parameters
+    ----------
+    n : Quantum number, satisfying n >= 0.
+    x : Position or array of positions at which the eigenfunction
+        is evaluated.
+
+    Notes
+    -----
+    The eigenfunction satisfies the normalization condition
+
+        integral from -infinity to +infinity of
+        |phi_n(x)|^2 dx = 1.
     """
 
     normalization = 1 / np.sqrt(2 ** n * math.factorial(n) * np.sqrt(np.pi)) 
@@ -15,9 +40,19 @@ def HO_eigenstates_exact(n, x):
 
 def HO_eigenenergies_exact(n):
     """
-    Returns the n-th eigenenergy of the quantum harmonic oscillator in numerical units.
-    """
+    Return the n-th eigenenergy of the one-dimensional
+    quantum harmonic oscillator in numerical units.
 
+    The analytical eigenenergy is
+
+    En = n + 1/2,
+
+    where :math:`n = 0, 1, 2 ...` is the quantum number.
+
+    Returns
+    -------
+    En: The n-th harmonic-oscillator eigenenergy.
+    """
     return n + 0.5
 
 def H_kinetic(x):
@@ -37,9 +72,24 @@ def H_kinetic(x):
 
 def HO_potential(x):
     """
-    Returns the potential energy operator of the quantum harmonic oscillator in the position basis for a grid 'x'.
-    The potential energy operator is represented as a diagonal matrix with elements given by V(x) = 0.5 * x^2.
-    """
-    
-    return 0.5 * np.diag(x ** 2)
+    Return the harmonic-oscillator potential-energy operator on the spatial grid x.
 
+    The harmonic-oscillator potential is
+
+    math::
+
+        V(x) = x^2/2.
+
+    In the discrete position basis(allowing the particle’s position x to take infinitely many continuous values), the potential operator is
+    represented by the diagonal matrix
+
+    Parameters
+    ----------
+    x : One-dimensional array containing the spatial-grid points.
+
+    Returns
+    -------
+    V : Diagonal matrix representing the potential-energy operator.
+        Its shape is (N, N), where N = len(x).
+    """
+    return 0.5 * np.diag(x**2)

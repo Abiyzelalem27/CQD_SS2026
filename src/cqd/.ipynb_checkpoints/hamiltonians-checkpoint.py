@@ -4,9 +4,36 @@ import math
 from scipy.special import hermite as herm
 
 
+
+
 def HO_eigenstates_exact(n, x):
     """
-    Returns the n-th eigenstate of the quantum harmonic oscillator at position 'x' in numerical units.
+   Return the normalized n-th eigenstate of the one-dimensional
+    quantum harmonic oscillator at position(s) x.
+
+    The analytical eigenfunction is
+
+        phi_n(x) = N_n * H_n(x) * exp(-x^2 / 2),
+
+    where
+
+        N_n = 1 / sqrt(2^n * n! * sqrt(pi)) 
+        
+    the normalization constant, and H_n(x) is the n-th
+    Hermite polynomial.
+
+    Parameters
+    ----------
+    n : Quantum number, satisfying n >= 0.
+    x : Position or array of positions at which the eigenfunction
+        is evaluated.
+
+    Notes
+    -----
+    The eigenfunction satisfies the normalization condition
+
+        integral from -infinity to +infinity of
+        |phi_n(x)|^2 dx = 1.
     """
 
     normalization = 1 / np.sqrt(2 ** n * math.factorial(n) * np.sqrt(np.pi)) 
@@ -15,9 +42,22 @@ def HO_eigenstates_exact(n, x):
 
 def HO_eigenenergies_exact(n):
     """
-    Returns the n-th eigenenergy of the quantum harmonic oscillator in numerical units.
-    """
+    Return the n-th eigenenergy of the one-dimensional
+    quantum harmonic oscillator in numerical units.
 
+    The analytical eigenenergy is
+
+    .. math::
+
+        E_n = n + 1/2,
+
+    where :math:`n = 0, 1, 2 ...` is the quantum number.
+
+    Returns
+    -------
+    E_n : float
+        The n-th harmonic-oscillator eigenenergy.
+    """
     return n + 0.5
 
 def H_kinetic(x):
