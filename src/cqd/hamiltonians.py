@@ -1,7 +1,6 @@
 import numpy as np   # standard numerics library
-
 import math
-from scipy.special import hermite as herm
+from scipy.special import hermite 
 
 
 def HO_eigenstates_exact(n, x):
@@ -11,13 +10,13 @@ def HO_eigenstates_exact(n, x):
 
     The analytical eigenfunction is
 
-        phi_n(x) = N_n * H_n(x) * exp(-x^2 / 2),
+        phi_n(x) = normalization constant * Hn(x) * exp(-x^2 / 2),
 
     where
 
-        N_n = 1 / sqrt(2^n * n! * sqrt(pi)) 
+        normalization constant = 1 / sqrt(2^n * n! * sqrt(pi)) 
         
-    the normalization constant, and H_n(x) is the n-th
+    the normalization constant, and Hn(x) is the n-th
     Hermite polynomial.
 
     Parameters
@@ -35,7 +34,7 @@ def HO_eigenstates_exact(n, x):
     """
 
     normalization = 1 / np.sqrt(2 ** n * math.factorial(n) * np.sqrt(np.pi)) 
-    return normalization * herm(n)(x) * np.exp(-x ** 2 / 2)
+    return normalization * hermite(n)(x) * np.exp(-x ** 2 / 2)
 
 
 def HO_eigenenergies_exact(n):
@@ -45,9 +44,9 @@ def HO_eigenenergies_exact(n):
 
     The analytical eigenenergy is
 
-    En = n + 1/2,
+    En = n + 0.5
 
-    where :math:`n = 0, 1, 2 ...` is the quantum number.
+    where : n = 0, 1, 2 ... , quantum number.
 
     Returns
     -------
@@ -73,7 +72,6 @@ def H_kinetic(x):
 def HO_potential(x):
     """
     Return the harmonic-oscillator potential-energy operator on the spatial grid x.
-
     The harmonic-oscillator potential is
 
     math::

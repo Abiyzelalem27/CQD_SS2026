@@ -1,9 +1,6 @@
 import numpy as np   # standard numerics library
-
 import math
-from scipy.special import hermite as herm
-
-
+from scipy.special import hermite 
 
 
 def HO_eigenstates_exact(n, x):
@@ -37,7 +34,7 @@ def HO_eigenstates_exact(n, x):
     """
 
     normalization = 1 / np.sqrt(2 ** n * math.factorial(n) * np.sqrt(np.pi)) 
-    return normalization * herm(n)(x) * np.exp(-x ** 2 / 2)
+    return normalization * hermite(n)(x) * np.exp(-x ** 2 / 2)
 
 
 def HO_eigenenergies_exact(n):
@@ -47,16 +44,13 @@ def HO_eigenenergies_exact(n):
 
     The analytical eigenenergy is
 
-    .. math::
+    En = n + 1/2,
 
-        E_n = n + 1/2,
-
-    where :math:`n = 0, 1, 2 ...` is the quantum number.
+    where : n = 0, 1, 2 ... , quantum number.
 
     Returns
     -------
-    E_n : float
-        The n-th harmonic-oscillator eigenenergy.
+    En: The n-th harmonic-oscillator eigenenergy.
     """
     return n + 0.5
 
@@ -77,9 +71,23 @@ def H_kinetic(x):
 
 def HO_potential(x):
     """
-    Returns the potential energy operator of the quantum harmonic oscillator in the position basis for a grid 'x'.
-    The potential energy operator is represented as a diagonal matrix with elements given by V(x) = 0.5 * x^2.
-    """
-    
-    return 0.5 * np.diag(x ** 2)
+    Return the harmonic-oscillator potential-energy operator on the spatial grid x.
+    The harmonic-oscillator potential is
 
+    math::
+
+        V(x) = x^2/2.
+
+    In the discrete position basis(allowing the particle’s position x to take infinitely many continuous values), the potential operator is
+    represented by the diagonal matrix
+
+    Parameters
+    ----------
+    x : One-dimensional array containing the spatial-grid points.
+
+    Returns
+    -------
+    V : Diagonal matrix representing the potential-energy operator.
+        Its shape is (N, N), where N = len(x).
+    """
+    return 0.5 * np.diag(x**2)

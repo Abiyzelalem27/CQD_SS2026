@@ -1,6 +1,6 @@
 
 
-# Computational Quantum Dynamics — SS2026
+# Computational Quantum Dynamics 
 
 ## Single Particle in a One-Dimensional Potential
 
@@ -19,7 +19,7 @@ CQD_SS2026/
 │   └── cqd/
 │       ├── __init__.py
 │       ├── hamiltonians.py
-│       └── plotting.py
+│    
 │
 ├── exercise1.ipynb
 ├── exercise1_sol.ipynb
