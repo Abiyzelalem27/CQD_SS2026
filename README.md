@@ -1,6 +1,6 @@
 
 
-# Computational Quantum Dynamics — SS2026
+# Computational Quantum Dynamics 
 
 ## Single Particle in a One-Dimensional Potential
 
