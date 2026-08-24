@@ -3,6 +3,7 @@ README.md
 pyproject.toml
 src/cqd/__init__.py
 src/cqd/hamiltonians.py
+src/cqd/plotting.py
 src/cqd.egg-info/PKG-INFO
 src/cqd.egg-info/SOURCES.txt
 src/cqd.egg-info/dependency_links.txt

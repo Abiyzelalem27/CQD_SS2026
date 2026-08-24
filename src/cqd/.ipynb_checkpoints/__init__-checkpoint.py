@@ -1,7 +1,8 @@
 
 
-from . import hamiltonians
+from . import hamiltonians, plotting
 
 __all__ = [
-    "hamiltonians"
+    "hamiltonians", 
+    "plotting"
 ]

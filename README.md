@@ -1,15 +1,46 @@
 
 
-# Computational Quantum Dynamics 
+# Computational Quantum Dynamics
+
+[![CI](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml/badge.svg)](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml)
 
 ## Single Particle in a One-Dimensional Potential
 
-The time-independent Schrödinger equation for a quantum particle in a one-dimensional potential.
+This repository contains the code selected for my Computational Quantum
+Dynamics oral examination.
 
-The main topics include:
 
-* Schrödinger equation
-* Harmonic oscillator 
+The continuous spatial coordinate is represented by a finite numerical
+grid. The second derivative is approximated using a finite-difference
+method, converting the Schrödinger equation into a matrix eigenvalue
+problem.
+
+The harmonic oscillator is considered as an example potential.
+
+## Main Topics
+
+- Time-independent Schrödinger equation
+- One-dimensional harmonic oscillator
+- Spatial discretization
+- Finite-difference approximation
+- Hamiltonian matrix construction
+- Numerical matrix diagonalization
+- Energy eigenvalues and eigenstates
+- Comparison with analytical results
+
+## Selected Examination Code
+
+I will present the relevant implementation contained in:
+
+`exercise1_sol.ipynb`
+
+During the presentation, I will explain:
+
+- the physical problem;
+- the mathematical discretization;
+- the Python implementation;
+- the numerical results;
+- numerical accuracy and limitations.
 
 ## Repository Structure
 
@@ -17,18 +48,14 @@ The main topics include:
 CQD_SS2026/
 ├── src/
 │   └── cqd/
-│       ├── __init__.py
-│       ├── hamiltonians.py
-│    
-│
+├── tests/
+│   
 ├── exercise1.ipynb
 ├── exercise1_sol.ipynb
 ├── pyproject.toml
 ├── LICENSE
 └── README.md
 ```
-
-
 ## References
 
 ### CQD_SS26 Main Repository — Primary Course Source

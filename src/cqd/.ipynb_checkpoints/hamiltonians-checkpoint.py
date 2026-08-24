@@ -3,6 +3,17 @@ import math
 from scipy.special import hermite 
 
 
+def create_xvals(L, npoints, endpoint=True):
+    """
+    Creates a grid of 'npoints' evenly spaced values between -L/2 and L/2.
+    The 'endpoint' parameter determines whether the endpoint L/2 is included in the grid.
+    Returns the grid of x values and the grid spacing dx.
+    """
+    xvals = np.linspace(-L / 2, L / 2, npoints, endpoint=endpoint)
+    dx = xvals[1] - xvals[0]
+    return xvals, dx
+
+    
 def HO_eigenstates_exact(n, x):
     """
    Return the normalized n-th eigenstate of the one-dimensional
@@ -10,13 +21,13 @@ def HO_eigenstates_exact(n, x):
 
     The analytical eigenfunction is
 
-        phi_n(x) = N_n * H_n(x) * exp(-x^2 / 2),
+        phi_n(x) = normalization constant * Hn(x) * exp(-x^2 / 2),
 
     where
 
-        N_n = 1 / sqrt(2^n * n! * sqrt(pi)) 
+        normalization constant = 1 / sqrt(2^n * n! * sqrt(pi)) 
         
-    the normalization constant, and H_n(x) is the n-th
+    the normalization constant, and Hn(x) is the n-th
     Hermite polynomial.
 
     Parameters
@@ -44,7 +55,7 @@ def HO_eigenenergies_exact(n):
 
     The analytical eigenenergy is
 
-    En = n + 1/2,
+    En = n + 0.5
 
     where : n = 0, 1, 2 ... , quantum number.
 

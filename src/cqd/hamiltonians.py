@@ -3,6 +3,17 @@ import math
 from scipy.special import hermite 
 
 
+def create_xvals(L, npoints, endpoint=True):
+    """
+    Creates a grid of 'npoints' evenly spaced values between -L/2 and L/2.
+    The 'endpoint' parameter determines whether the endpoint L/2 is included in the grid.
+    Returns the grid of x values and the grid spacing dx.
+    """
+    xvals = np.linspace(-L / 2, L / 2, npoints, endpoint=endpoint)
+    dx = xvals[1] - xvals[0]
+    return xvals, dx
+
+    
 def HO_eigenstates_exact(n, x):
     """
    Return the normalized n-th eigenstate of the one-dimensional

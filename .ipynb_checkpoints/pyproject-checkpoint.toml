@@ -1,21 +1,33 @@
 
 
 
+### `pyproject.toml`
+
+Because your package uses `src/cqd/`, do not keep the original package name and configuration unchanged.
+
+```toml
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cqd"
+name = "CQD_SS2026"
 version = "1.0.0"
-description = "Computational Quantum Dynamics"
+description = "Exercise 1 for Computational Quantum Dynamics"
 readme = "README.md"
 requires-python = ">=3.11"
-
 dependencies = [
     "numpy",
     "scipy",
     "matplotlib",
+    "IPython",
+    "notebook",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "nbconvert",
 ]
 
 [tool.setuptools]
@@ -23,8 +35,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.coverage.run]
-omit = [
-    "src/cqd/__init__.py",
-] 
