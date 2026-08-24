@@ -1,7 +1,9 @@
-import numpy as np   # standard numerics library
+import numpy as np   # standard numerics l
+
+
 import math
 from scipy.special import hermite 
-
+import numpy as np
 
 def create_xvals(L, npoints, endpoint=True):
     """
