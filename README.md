@@ -4,28 +4,18 @@
 
 [![CI](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml/badge.svg)](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml)
 
-## Technology and Numerical Methods
+## Technology Stack
 
-**Technologies:** Python 3.9+, NumPy, SciPy, Jupyter, Matplotlib, pytest  
-**Methods:** Finite Differences, Matrix Diagonalization, Scientific Computing  
-**License:** MIT
-
+![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific_Computing-013243?logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-Numerical_Methods-8CAAE6?logo=scipy&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C)
+![pytest](https://img.shields.io/badge/pytest-Automated_Tests-0A9EDC?logo=pytest&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 
 ## Single Particle in a One-Dimensional Potential
-
-This repository contains the code selected for my Computational Quantum
-Dynamics oral examination.
-
-
-The continuous spatial coordinate is represented by a finite numerical
-grid. The second derivative is approximated using a finite-difference
-method, converting the Schrödinger equation into a matrix eigenvalue
-problem.
-
-The harmonic oscillator is considered as an example potential.
-
-## Main Topics
 
 - Time-independent Schrödinger equation
 - One-dimensional harmonic oscillator
@@ -36,19 +26,6 @@ The harmonic oscillator is considered as an example potential.
 - Energy eigenvalues and eigenstates
 - Comparison with analytical results
 
-## Selected Examination Code
-
-I will present the relevant implementation contained in:
-
-`exercise1_sol.ipynb`
-
-During the presentation, I will explain:
-
-- the physical problem;
-- the mathematical discretization;
-- the Python implementation;
-- the numerical results;
-- numerical accuracy and limitations.
 
 ## Repository Structure
 
