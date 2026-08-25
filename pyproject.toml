@@ -15,6 +15,7 @@ dependencies = [
     "scipy",
     "matplotlib",
     "IPython",
+    "ipywidgets",
     "notebook",
 ]
 
