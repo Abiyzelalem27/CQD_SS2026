@@ -4,6 +4,14 @@
 
 [![CI](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml/badge.svg)](https://github.com/Abiyzelalem27/CQD_SS2026/actions/workflows/python_CI.yml)
 
+## Technology and Numerical Methods
+
+**Technologies:** Python 3.9+, NumPy, SciPy, Jupyter, Matplotlib, pytest  
+**Methods:** Finite Differences, Matrix Diagonalization, Scientific Computing  
+**License:** MIT
+
+
+
 ## Single Particle in a One-Dimensional Potential
 
 This repository contains the code selected for my Computational Quantum
