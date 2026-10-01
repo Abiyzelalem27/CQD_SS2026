@@ -7,13 +7,22 @@ import numpy as np
 
 def create_xvals(L, npoints, endpoint=True):
     """
-    Creates a grid of 'npoints' evenly spaced values between -L/2 and L/2.
-    The 'endpoint' parameter determines whether the endpoint L/2 is included in the grid.
-    Returns the grid of x values and the grid spacing dx.
+    Create npoints equally spaced positions from -L/2 towards +L/2.
+
+    Parameters:
+        L: Total length of the spatial interval.
+        npoints: Number of grid positions (at least 2).
+        endpoint: Whether to include the right boundary +L/2.
+            True: Include +L/2 (default).
+            False: Exclude +L/2.
+
+    Returns:
+        xvals: NumPy array of grid positions.
+        dx: Distance between neighbouring grid positions.
     """
     xvals = np.linspace(-L / 2, L / 2, npoints, endpoint=endpoint)
     dx = xvals[1] - xvals[0]
-    return xvals, dx
+    return xvals, dx 
 
     
 def HO_eigenstates_exact(n, x):
